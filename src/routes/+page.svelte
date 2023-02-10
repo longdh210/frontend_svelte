@@ -31,10 +31,10 @@
 				<img src={person} alt="person"/>
 			</div>
 			<div class="mt-10 lg:mt-2">
-				<SignInButton icon={tid} title="Sign in with T ID"></SignInButton>
-				<SignInButton icon={kakao} title="Sign in with Kakao"></SignInButton>
-				<SignInButton icon={fb} title="Sign in with Facebook"></SignInButton>
-				<SignInButton icon={gg} title="Sign in with Google"></SignInButton>
+				<SignInButton icon={tid} title="Sign in with T ID" onClick={navigate}></SignInButton>
+				<SignInButton icon={kakao} title="Sign in with Kakao" onClick={navigate}></SignInButton>
+				<SignInButton icon={fb} title="Sign in with Facebook" onClick={navigate}></SignInButton>
+				<SignInButton icon={gg} title="Sign in with Google" onClick={navigate}></SignInButton>
 			</div>
 		</div>
 	</div>
