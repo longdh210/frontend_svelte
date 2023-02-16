@@ -7,7 +7,15 @@
 	import gamepad from "../../assets/gamepad.png";
 	import users from "../../assets/users.png";
 	import paperPlane from "../../assets/paper-plane.png";
+	import comment from "../../assets/comment.png";
+	import home from "../../assets/home.png";
+	import star from "../../assets/star.png";
+	import vest from "../../assets/vest.png";
+	import user from "../../assets/user.png";
+	import menu from "../../assets/menu.png";
+
 	import Carousel from '../../components/Carousel/Carousel.svelte'
+	import InforForm from '../../components/Informaton/InforForm.svelte';
 	
 	let images = [
 		{title: 'London', src: 'https://picsum.photos/800/600?random=2'},
@@ -17,11 +25,48 @@
 		{title: 'Ca Mau', src: 'https://picsum.photos/800/600?random=2'},
 		{title: 'Rach Gia', src: 'https://picsum.photos/800/600?random=2'},
 	]
+
+	let current = 'global';
+	let menuBar = false;
 </script>
 
-<div class="w-screen h-screen bg-sky-300 flex justify-center items-center">
-	<div class="sm:w-full sm:h-full lg:w-2/6 lg:h-3/4 bg-white flex-none flex-col border rounded-lg overflow-y-scroll">
-		<div class="bg-slate-200 h-[10%]">
+<div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
+	<div class="w-full h-full flex justify-end text-end mr-2 sm:w-full">
+		<nav class="h-[10%]">
+			<div class="w-full cursor-pointer md:hidden flex justify-end px-4 border-r-4 border-slate-100 mb-2 mt-2">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<img class="w-[5%] sm:w-[3%]" src={menu} alt="menu" on:click={() => menuBar = !menuBar}/>
+			</div>
+		  <ul class="{menuBar == true ? "" : "hidden"} md:block">
+			<li class="mb-2">
+			  <a class="px-4 border-r-4 border-amber-500" href="/">
+				<span>Home</span>
+				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={home} alt="home"/>
+			  </a>
+			</li>
+			<li class="mb-2">
+			  <a class="px-4 border-r-4 border-slate-100" href="/star">
+				<span>Star</span>
+				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={star} alt="star"/>
+			  </a>
+			</li>
+			<li class="mb-2">
+			  <a class="px-4 border-r-4 border-slate-100" href="/character">
+				<span>Character</span>
+				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={vest} alt="vest"/>
+			  </a>
+			</li>
+			<li class="mb-2">
+				<a class="px-4 border-r-4 border-slate-100" href="/profile">
+				  <span>Profile</span>
+				  <img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={user} alt="user"/>
+				</a>
+			  </li>
+		  </ul>
+		</nav>
+	  </div>
+	<div class="h-full sm:w-full sm:h-full lg:w-[60%] lg:h-full bg-white flex-none flex-col overflow-y-scroll overflow-x-hidden border-0">
+		<div class="bg-sky-300 h-[10%] border-0">
 			<div class="float-left">
 				<h1 class="font-title font-bold text-fuchsia-500 text-4xl mt-2 ml-3">ifland</h1>
 			</div>
@@ -39,12 +84,12 @@
 				alt="search"
 			  />
 			</div>
-		  	</div>
-		  	<div class="w-full h-1/3 bg-slate-200 flex items-center flex-col relative border rounded-b-[50px]">
-				<div class="w-1/2">
-					<img class="w-5/6 h-5/6" src={person} alt="person"/>
+		</div>
+		  	<div class="w-full h-[30%] sm:h-[40%] bg-sky-300 flex items-center flex-col relative border-0 rounded-b-[50px]">
+				<div class="w-[70%] sm:w-1/2">
+					<img class="w-full sm:w-5/6 h-5/6" src={person} alt="person"/>
 				</div>
-				<div class="w-5/6 h-14 bg-white border rounded-lg absolute -bottom-7 flex items-center justify-center">
+				<div class="w-5/6 h-14 bg-white border rounded-lg absolute -bottom-7 flex items-center justify-center shadow-lg">
 					<div class="mr-5">
 						<img class="w-10 h-10 inline-block mr-2" src={gamepad} alt="gamepad"/>
 						<span class="text-cyan-300 font-bold">Lounge ></span>
@@ -58,14 +103,49 @@
 			</div>
 			<div class="mt-10 w-full h-2/5 flex flex-col">
 				<span class="float-left mt-2 mb-5 ml-3 font-bold">Popular land</span>
-				<Carousel {images} width=100 gap=32></Carousel>
+				<Carousel {images} width=100 gap=32 widthAvt=50 bgWidth=40></Carousel>
 			</div>
-			<div class="mt-10 w-full h-1/6 flex flex-col items-center">
+			<div class="mt-7 w-full h-1/6 flex flex-col items-center">
 				<img class="w-[90%] h-[100%]" src="https://picsum.photos/800/600?random=3" alt="adver"/>
 			</div>
-			<div class="mt-10 w-full h-2/5 flex flex-col">
+			<div class="mt-7 w-full h-[50%] flex flex-col">
 				<span class="float-left mt-2 mb-5 ml-3 font-bold">Special land</span>
-				<Carousel {images} width=250 gap=32></Carousel>
+				<Carousel {images} width=200 gap=56  widthAvt=30 bgWidth=50></Carousel>
+			</div>
+			<div class="mt-7 mb-3 w-full">
+				<div class="ml-3">
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<span class="inline-block font-bold mr-2 {current === 'global' ? 'selected' : ''}" on:click={() => current = 'global'} >	
+						Global
+					</span>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<span class="inline-block font-bold {current === 'my' ? 'selected' : ''}" on:click={() => current = 'my'}>
+						My
+					</span>
+				</div>
+				<div class="h-20 w-full flex justify-center items-center">
+					<img class="w-[90%] h-[100%] mt-3" src="https://picsum.photos/800/600?random=3" alt="adver"/>
+				</div>
+				<div class="w-full mt-5">
+					{#if current === "global"}
+						<InforForm></InforForm>
+						<InforForm></InforForm>
+						<InforForm></InforForm>
+						<InforForm></InforForm> 
+					{:else if current === "my"}
+						<div class="h-36 w-full flex flex-col justify-center items-center text-center px-2">
+							<img class="w-[5%]" src={comment} alt="comment"/>
+							<span class="text-slate-400">There is no land that I personally made or registered notification for. Try searching your land you like.</span>
+						</div>
+					{/if}
+				</div>
 			</div>
 	</div>
 </div>
+
+<style>
+	.selected {
+		color: #8776ef;
+		border-bottom: 2px solid #8776ef;
+	}
+</style>
