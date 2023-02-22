@@ -13,6 +13,7 @@
 	import vest from "../../assets/vest.png";
 	import user from "../../assets/user.png";
 	import menu from "../../assets/menu.png";
+	import add from "../../assets/add.png";
 
 	import Carousel from '../../components/Carousel/Carousel.svelte'
 	import InforForm from '../../components/Informaton/InforForm.svelte';
@@ -31,7 +32,7 @@
 </script>
 
 <div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
-	<div class="w-full h-full flex justify-end text-end mr-2 sm:w-full">
+	<div class="w-full h-full flex justify-end text-end mr-2 sm:w-full mt-2">
 		<nav class="h-[10%]">
 			<div class="w-full cursor-pointer md:hidden flex justify-end px-4 border-r-4 border-slate-100 mb-2 mt-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -39,34 +40,40 @@
 			</div>
 		  <ul class="{menuBar == true ? "" : "hidden"} md:block">
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-amber-500" href="/">
+			  <a class="px-4 border-r-4 border-amber-500 flex items-center justify-end" href="/">
 				<span>Home</span>
-				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={home} alt="home"/>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={home} alt="home"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-slate-100" href="/star">
-				<span>Star</span>
-				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={star} alt="star"/>
+			  <a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/about">
+				<span>About</span>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={star} alt="About"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-slate-100" href="/character">
+				<a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/add">
+				  <span>Add</span>
+				  <img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={add} alt="Add"/>
+				</a>
+			</li>
+			<li class="mb-2">
+			  <a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/character">
 				<span>Character</span>
-				<img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={vest} alt="vest"/>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={vest} alt="vest"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-				<a class="px-4 border-r-4 border-slate-100" href="/profile">
+				<a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/profile">
 				  <span>Profile</span>
-				  <img class="w-[4%] md:w-[20%] lg:w-[3%] inline-block" src={user} alt="user"/>
+				  <img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={user} alt="user"/>
 				</a>
 			  </li>
 		  </ul>
 		</nav>
 	  </div>
-	<div class="h-full sm:w-full sm:h-full lg:w-[60%] lg:h-full bg-white flex-none flex-col overflow-y-scroll overflow-x-hidden border-0">
-		<div class="bg-sky-300 h-[10%] border-0">
+	<div class="h-full sm:w-full sm:h-full md:w-[80%] md:h-full lg:w-[60%] lg:h-full bg-white flex-none flex-col overflow-y-scroll overflow-x-hidden border-0">
+		<div class="bg-sky-300 h-[10%] border border-sky-300">
 			<div class="float-left">
 				<h1 class="font-title font-bold text-fuchsia-500 text-4xl mt-2 ml-3">ifland</h1>
 			</div>
@@ -85,8 +92,8 @@
 			  />
 			</div>
 		</div>
-		  	<div class="w-full h-[30%] sm:h-[40%] bg-sky-300 flex items-center flex-col relative border-0 rounded-b-[50px]">
-				<div class="w-[70%] sm:w-1/2">
+		  	<div class="w-full h-[30%] sm:h-[40%] bg-sky-300 flex items-center flex-col relative rounded-b-[50px] border border-sky-300">
+				<div class="w-[55%] sm:w-1/2">
 					<img class="w-full sm:w-5/6 h-5/6" src={person} alt="person"/>
 				</div>
 				<div class="w-5/6 h-14 bg-white border rounded-lg absolute -bottom-7 flex items-center justify-center shadow-lg">

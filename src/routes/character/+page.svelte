@@ -7,6 +7,7 @@
 	import vest from "../../assets/vest.png";
 	import user from "../../assets/user.png";
 	import menu from "../../assets/menu.png";
+	import add  from "../../assets/add.png";
 
     let images = [
 		{title: 'London', src: 'https://picsum.photos/800/600?random=2'},
@@ -24,35 +25,41 @@
 </script>
 
 <div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
-    <div class="w-full h-full flex justify-end text-end mr-2 sm:w-full">
+    <div class="w-full h-full flex justify-end text-end mr-2 sm:w-full mt-2">
 		<nav class="h-[10%]">
-			<div class="w-full cursor-pointer lg:hidden flex justify-end px-4 border-r-4 border-slate-100 mb-2 mt-2">
+			<div class="w-full cursor-pointer md:hidden flex justify-end px-4 border-r-4 border-slate-100 mb-2 mt-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<img class="w-[5%] sm:w-[3%]" src={menu} alt="menu" on:click={() => menuBar = !menuBar}/>
 			</div>
 		  <ul class="{menuBar == true ? "" : "hidden"} md:block">
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-amber-500" href="/">
+			  <a class="px-4 border-r-4 border-amber-500 flex items-center justify-end" href="/">
 				<span>Home</span>
-				<img class="w-[3%] lg:w-[3%] inline-block" src={home} alt="home"/>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={home} alt="home"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-slate-100" href="/about">
+			  <a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/about">
 				<span>About</span>
-				<img class="w-[3%] lg:w-[3%] inline-block" src={star} alt="star"/>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={star} alt="About"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-			  <a class="px-4 border-r-4 border-slate-100" href="/character">
+				<a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/add">
+				  <span>Add</span>
+				  <img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={add} alt="Add"/>
+				</a>
+			</li>
+			<li class="mb-2">
+			  <a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/character">
 				<span>Character</span>
-				<img class="w-[3%] lg:w-[3%] inline-block" src={vest} alt="vest"/>
+				<img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={vest} alt="vest"/>
 			  </a>
 			</li>
 			<li class="mb-2">
-				<a class="px-4 border-r-4 border-slate-100" href="/profile">
+				<a class="px-4 border-r-4 border-slate-100 flex items-center justify-end" href="/profile">
 				  <span>Profile</span>
-				  <img class="w-[3%] lg:w-[3%] inline-block" src={user} alt="user"/>
+				  <img class="w-[3%] md:w-[15%] lg:w-[5%] xl:w-[3%] inline-block ml-2" src={user} alt="user"/>
 				</a>
 			  </li>
 		  </ul>
