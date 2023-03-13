@@ -1,4 +1,5 @@
 <script>
+	import { goto } from "$app/navigation";
 	import "../../app.css";
     import person from "../../assets/person.png";
     import CarouselTest from "../../components/Carousel/CarouselTest.svelte";
@@ -14,7 +15,7 @@
 	]
 </script>
 
-<div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
+<div class="w-screen h-screen bg-slate-200 flex flex-col md:flex-row">
     <NavBar></NavBar>
 	<div class="h-full sm:w-full sm:h-full lg:w-[60%] lg:h-full bg-white flex-none flex-col overflow-y-hidden">
         <div class="w-full h-[15%] flex items-end justify-center">
@@ -34,7 +35,9 @@
             <button class="w-[80%] h-[40%] border border-slate-400 rounded-lg hover:bg-gray-200">
                 Create your own if-me
             </button>
-            <button class="w-[80%] h-[40%] mt-2 border border-slate-400 rounded-lg hover:bg-gray-200 bg-violet-500 text-white">
+            <button class="w-[80%] h-[40%] mt-2 border border-slate-400 rounded-lg hover:bg-gray-200 bg-violet-500 text-white"
+            on:click={() => {goto("/play")}}
+            >
                 Start ifland
             </button>
         </div>

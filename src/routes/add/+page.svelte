@@ -12,9 +12,9 @@
 	]
 </script>
 
-<div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
+<div class="w-screen h-screen bg-slate-200 flex flex-col md:flex-row">
 	<NavBar></NavBar>
-	<div class="h-full sm:w-full sm:h-full md:w-[80%] md:h-full lg:w-[60%] lg:h-full bg-slate-200 flex-none flex-col overflow-y-scroll overflow-x-hidden border-0">
+	<div class="h-full sm:w-full sm:h-full md:w-[80%] md:h-full lg:w-[60%] lg:h-full bg-slate-100 flex-none flex-col overflow-y-scroll overflow-x-hidden border-0">
 		<div class="h-[10%] w-full flex flex-col items-center mb-5">
 			<h1 class="mt-2 mb-2 text-xl">Create a land</h1>
 			<input class="w-[50%] h-[45%] border-2 rounded-lg px-5 bg-slate-100" placeholder="Type the room title! You can meet global users"/>
@@ -48,7 +48,7 @@
 		<div class="h-[10%] w-full ml-3 mb-10 sm:mb-5">
 			<div class="flex flex-row justify-between mr-3">
 				<h1 class="font-bold">tag</h1>
-				<select class="mr-4 bg-slate-200" name="tags" id="tags">
+				<select class="mr-4 bg-slate-100" name="tags" id="tags">
 					<option value="1">not set</option>
 					<option value="2">tag 1</option>
 					<option value="3">tag 2</option>

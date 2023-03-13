@@ -15,7 +15,7 @@
 	]
 </script>
 
-<div class="w-screen h-screen bg-slate-100 flex flex-col md:flex-row">
+<div class="w-screen h-screen bg-slate-200 flex flex-col md:flex-row">
 	<NavBar></NavBar>
 	<div class="h-full sm:w-full sm:h-full md:w-[80%] md:h-full lg:w-[60%] lg:h-full bg-white flex-none flex-col sm:overflow-hidden">
 		<div class="mt-1 w-full h-[30%] flex flex-col">
